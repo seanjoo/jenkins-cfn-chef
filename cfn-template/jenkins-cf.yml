@@ -79,19 +79,8 @@ Resources:
         - "arn:aws:iam::aws:policy/CloudWatchFullAccess"
         - "arn:aws:iam::aws:policy/AmazonElasticMapReduceFullAccess"
         - "arn:aws:iam::aws:policy/AmazonSageMakerFullAccess"
-        - "arn:aws:iam::aws:policy/CloudWatchEventsFullAccess"
-        - "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
-        - "arn:aws:iam::aws:policy/AmazonSESFullAccess"
-        - "arn:aws:iam::aws:policy/AmazonSQSFullAccess"
-        - "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
-        - "arn:aws:iam::aws:policy/AWSCodeCommitFullAccess"
         - "arn:aws:iam::aws:policy/AWSLambdaFullAccess"
         - "arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator"
-        - "arn:aws:iam::aws:policy/AWSDataPipeline_FullAccess"
-        - "arn:aws:iam::aws:policy/AWSCodeDeployFullAccess"
-        - "arn:aws:iam::aws:policy/AWSCodeStarFullAccess"
-        - "arn:aws:iam::aws:policy/AWSCodePipelineFullAccess"
-        - "arn:aws:iam::aws:policy/job-function/DataScientist"
   JenkinsRolePolicies:
     Type: "AWS::IAM::Policy"
     Properties:
@@ -104,6 +93,13 @@ Resources:
             Action:
               - "es:*"
               - "cloudformation:*"
+              - "sns:*"
+              - "sqs:*"
+              - "ses:*"
+              - "route53:*"
+              - "iam:*"
+              - "codepipeline:*"
+              - "codedeploy:*"
             Resource: "*"
       Roles:
         -
