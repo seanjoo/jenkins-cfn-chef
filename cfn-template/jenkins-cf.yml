@@ -26,9 +26,9 @@ Parameters:
       - t3.large
     ConstraintDescription: must be a valid EC2 instance type.
   ImageId:
-    Description: EC2 AMI id to use.
-    Type: String
-    Default: ami-035be7bafff33b6b6
+    Description: Latest Amazon2 ami AMI ID
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
   JenkinsPort:
     Default: 8080
     Description: The Jenkins Port
